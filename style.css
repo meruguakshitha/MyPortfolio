@@ -1,0 +1,47 @@
+/* Animations */
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideup {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes glow {
+  0% { box-shadow: 0 0 15px #9333ea, 0 0 30px #9333ea; }
+  50% { box-shadow: 0 0 25px #a855f7, 0 0 50px #9333ea; }
+  100% { box-shadow: 0 0 15px #9333ea, 0 0 30px #9333ea; }
+}
+
+/* Utility classes */
+.animate-fadein { animation: fadein 1s ease forwards; }
+.animate-slideup { animation: slideup 1.5s ease forwards; }
+.animate-glow { animation: glow 3s infinite alternate; }
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #9333ea, #6366f1);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.skill-card, .project-card, .edu-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.skill-card:hover, .project-card:hover, .edu-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.1);
+}
